@@ -1,12 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import Services from '@/components/Services';
-import Offers from '@/components/Offers';
-import Products from '@/components/Products';
-import About from '@/components/About';
-import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Products from '@/components/Products';
 import ShoppingCart from '@/components/ShoppingCart';
 import { Product } from '@/components/ProductCard';
 import { useToast } from '@/hooks/use-toast';
@@ -15,44 +10,11 @@ interface CartItem extends Product {
   quantity: number;
 }
 
-const Index = () => {
+const Shop = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [wishlistItems, setWishlistItems] = useState<Product[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const { toast } = useToast();
-
-  // Load cart and wishlist from localStorage on component mount
-  useEffect(() => {
-    const savedCart = localStorage.getItem('greenbasket-cart');
-    const savedWishlist = localStorage.getItem('greenbasket-wishlist');
-    
-    if (savedCart) {
-      try {
-        setCartItems(JSON.parse(savedCart));
-      } catch (error) {
-        console.error('Error loading cart from localStorage:', error);
-      }
-    }
-    
-    if (savedWishlist) {
-      try {
-        setWishlistItems(JSON.parse(savedWishlist));
-      } catch (error) {
-        console.error('Error loading wishlist from localStorage:', error);
-      }
-    }
-  }, []);
-
-  // Save cart to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('greenbasket-cart', JSON.stringify(cartItems));
-  }, [cartItems]);
-
-  // Save wishlist to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('greenbasket-wishlist', JSON.stringify(wishlistItems));
-  }, [wishlistItems]);
 
   const handleAddToCart = (product: Product) => {
     setCartItems(prevItems => {
@@ -97,7 +59,6 @@ const Index = () => {
   };
 
   const handleQuickView = (product: Product) => {
-    // Quick view functionality would open a modal/drawer here
     toast({
       title: "Quick View",
       description: `Opening quick view for ${product.name}`,
@@ -120,34 +81,34 @@ const Index = () => {
     });
   };
 
-  const handleCartClick = () => {
-    setIsCartOpen(true);
-  };
-
-  const handleWishlistClick = () => {
-    setIsWishlistOpen(true);
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <Header
         cartCount={cartItems.reduce((sum, item) => sum + item.quantity, 0)}
         wishlistCount={wishlistItems.length}
-        onCartClick={handleCartClick}
-        onWishlistClick={handleWishlistClick}
+        onCartClick={() => setIsCartOpen(true)}
+        onWishlistClick={() => {}}
       />
       
-      <main>
-        <Hero />
-        <Services />
-        <Offers />
+      <main className="pt-24">
+        {/* Hero Section */}
+        <section className="bg-gradient-hero py-16">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Our Fresh Products
+            </h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Discover our wide selection of fresh, organic produce sourced directly from Indian farms
+            </p>
+          </div>
+        </section>
+
+        {/* Products Section */}
         <Products
           onAddToCart={handleAddToCart}
           onAddToWishlist={handleAddToWishlist}
           onQuickView={handleQuickView}
         />
-        <About />
-        <Contact />
       </main>
       
       <Footer />
@@ -160,10 +121,8 @@ const Index = () => {
         onUpdateQuantity={handleUpdateCartQuantity}
         onRemoveItem={handleRemoveFromCart}
       />
-
-      {/* Note: Wishlist sidebar would be implemented similarly to the cart */}
     </div>
   );
 };
 
-export default Index;
+export default Shop;

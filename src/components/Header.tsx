@@ -15,19 +15,17 @@ const Header = ({ cartCount, wishlistCount, onCartClick, onWishlistClick }: Head
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '#home', active: true },
-    { name: 'About', href: '#about' },
-    { name: 'Shop', href: '#shop' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Products', href: '#products' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', active: true },
+    { name: 'Shop', href: '/shop' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <>
       {/* Top Banner */}
       <div className="bg-dark text-dark-foreground py-2 text-center text-sm">
-        <span className="text-success font-medium">Free shipping for all order of $105</span>
+        <span className="text-success font-medium">Free shipping for all order of ₹500</span>
       </div>
 
       {/* Main Header */}
@@ -37,7 +35,7 @@ const Header = ({ cartCount, wishlistCount, onCartClick, onWishlistClick }: Head
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <span className="text-2xl font-bold text-dark">
-                Organ<span className="text-primary">ica</span>
+                Green<span className="text-primary">Basket</span>
               </span>
             </div>
 
@@ -50,6 +48,12 @@ const Header = ({ cartCount, wishlistCount, onCartClick, onWishlistClick }: Head
                   className={`text-sm font-medium transition-colors hover:text-primary ${
                     item.active ? 'text-primary' : 'text-foreground'
                   }`}
+                  onClick={(e) => {
+                    if (item.href.startsWith('/')) {
+                      e.preventDefault();
+                      window.location.href = item.href;
+                    }
+                  }}
                 >
                   {item.name}
                 </a>
@@ -162,7 +166,13 @@ const Header = ({ cartCount, wishlistCount, onCartClick, onWishlistClick }: Head
                   className={`block py-2 text-sm font-medium transition-colors hover:text-primary ${
                     item.active ? 'text-primary' : 'text-foreground'
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    setIsMenuOpen(false);
+                    if (item.href.startsWith('/')) {
+                      e.preventDefault();
+                      window.location.href = item.href;
+                    }
+                  }}
                 >
                   {item.name}
                 </a>

@@ -20,26 +20,26 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri 9:00 AM - 6:00 PM',
+      details: '+91 98765 43210',
+      description: 'Mon-Fri 9:00 AM - 6:00 PM IST',
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@organica.com',
+      details: 'info@greenbasket.com',
       description: 'We reply within 24 hours',
     },
     {
       icon: MapPin,
       title: 'Address',
-      details: '123 Organic Street, Fresh Valley, CA 90210',
+      details: 'Shop No. 42, Green Market Complex, Bandra West, Mumbai - 400050, Maharashtra',
       description: 'Visit our store',
     },
     {
       icon: Clock,
       title: 'Working Hours',
-      details: 'Mon - Fri: 9:00 AM - 6:00 PM',
-      description: 'Sat - Sun: 10:00 AM - 4:00 PM',
+      details: 'Mon - Fri: 9:00 AM - 6:00 PM IST',
+      description: 'Sat - Sun: 10:00 AM - 4:00 PM IST',
     },
   ];
 
@@ -205,7 +205,7 @@ const Contact = () => {
                   Interactive map would be embedded here
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  123 Organic Street, Fresh Valley, CA 90210
+                  Shop No. 42, Green Market Complex, Bandra West, Mumbai - 400050, Maharashtra
                 </p>
               </div>
             </div>

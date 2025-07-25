@@ -43,10 +43,10 @@ const Footer = () => {
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl font-bold">
-                Organ<span className="text-primary">ica</span>
+                Green<span className="text-primary">Basket</span>
               </h2>
               <p className="text-white/80 mt-4 leading-relaxed">
-                Your trusted source for fresh, organic, and sustainable food products. 
+                Your trusted source for fresh, organic, and sustainable food products across India. 
                 We're committed to bringing you the best nature has to offer.
               </p>
             </div>
@@ -55,17 +55,17 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-white/80">+1 (555) 123-4567</span>
+                <span className="text-white/80">+91 98765 43210</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-primary flex-shrink-0" />
-                <span className="text-white/80">info@organica.com</span>
+                <span className="text-white/80">info@greenbasket.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                 <span className="text-white/80">
-                  123 Organic Street,<br />
-                  Fresh Valley, CA 90210
+                  Shop No. 42, Green Market Complex,<br />
+                  Bandra West, Mumbai - 400050, Maharashtra
                 </span>
               </div>
             </div>
@@ -151,7 +151,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-white/60 text-sm">
-            © {currentYear} Organica. All rights reserved.
+            © {currentYear} GreenBasket. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <a href="#privacy" className="text-white/60 hover:text-primary transition-colors">

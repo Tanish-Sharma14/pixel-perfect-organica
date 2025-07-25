@@ -21,7 +21,8 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto lg:mx-0">
-              It has survived not only five centuries also there leaped into electronic typesetting.
+              Experience the finest selection of fresh, organic produce delivered across India. 
+              Supporting sustainable farming practices for a healthier tomorrow.
             </p>
             
             <Button 

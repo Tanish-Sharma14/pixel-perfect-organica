@@ -5,7 +5,7 @@ const Services = () => {
     {
       icon: Truck,
       title: 'Free Shipping',
-      description: 'Free shipping on all orders over $105',
+      description: 'Free shipping on all orders over ₹500',
     },
     {
       icon: CreditCard,
