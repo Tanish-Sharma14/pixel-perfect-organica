@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { Leaf, Fish, Apple, Milk } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ProductCard, { Product } from '@/components/ProductCard';
-import orangesImage from '@/assets/product-oranges.jpg';
-import broccoliImage from '@/assets/product-broccoli.jpg';
+import bananasImage from '@/assets/product-bananas.jpg';
+import lettuceImage from '@/assets/product-lettuce.jpg';
 import applesImage from '@/assets/product-apples.jpg';
 import vegetablePackageImage from '@/assets/product-vegetable-package.jpg';
+import chickenImage from '@/assets/offer-chicken.jpg';
+import muttonImage from '@/assets/product-mutton.jpg';
+import fishImage from '@/assets/product-fish.jpg';
 
 interface ProductsProps {
   onAddToCart?: (product: Product) => void;
@@ -27,12 +30,12 @@ const Products = ({ onAddToCart, onAddToWishlist, onQuickView }: ProductsProps) 
   const products: Product[] = [
     {
       id: '1',
-      name: 'Fresh Oranges',
-      price: 12.99,
-      originalPrice: 15.99,
+      name: 'Fresh Bananas',
+      price: 120.99,
+      originalPrice: 145.99,
       rating: 4.5,
       reviews: 25,
-      image: orangesImage,
+      image: bananasImage,
       category: 'fruits',
       inStock: true,
       isOrganic: true,
@@ -40,11 +43,11 @@ const Products = ({ onAddToCart, onAddToWishlist, onQuickView }: ProductsProps) 
     },
     {
       id: '2',
-      name: 'Organic Broccoli',
-      price: 8.50,
+      name: 'Green Lettuce',
+      price: 85.50,
       rating: 4.8,
       reviews: 15,
-      image: broccoliImage,
+      image: lettuceImage,
       category: 'vegetables',
       inStock: true,
       isOrganic: true,
@@ -52,8 +55,8 @@ const Products = ({ onAddToCart, onAddToWishlist, onQuickView }: ProductsProps) 
     {
       id: '3',
       name: 'Red Apples',
-      price: 10.99,
-      originalPrice: 13.99,
+      price: 180.99,
+      originalPrice: 210.99,
       rating: 4.3,
       reviews: 32,
       image: applesImage,
@@ -65,7 +68,7 @@ const Products = ({ onAddToCart, onAddToWishlist, onQuickView }: ProductsProps) 
     {
       id: '4',
       name: 'Vegetable Package',
-      price: 24.99,
+      price: 450.99,
       rating: 4.7,
       reviews: 18,
       image: vegetablePackageImage,
@@ -75,23 +78,34 @@ const Products = ({ onAddToCart, onAddToWishlist, onQuickView }: ProductsProps) 
     },
     {
       id: '5',
-      name: 'Fresh Bananas',
-      price: 6.99,
-      rating: 4.2,
-      reviews: 28,
-      image: orangesImage, // Placeholder - would be banana image
-      category: 'fruits',
-      inStock: false,
+      name: 'Fresh Chicken',
+      price: 320.99,
+      rating: 4.6,
+      reviews: 42,
+      image: chickenImage,
+      category: 'meat',
+      inStock: true,
       isOrganic: true,
     },
     {
       id: '6',
-      name: 'Green Lettuce',
-      price: 4.99,
-      rating: 4.6,
-      reviews: 12,
-      image: broccoliImage, // Placeholder - would be lettuce image
-      category: 'vegetables',
+      name: 'Fresh Mutton',
+      price: 650.99,
+      rating: 4.4,
+      reviews: 28,
+      image: muttonImage,
+      category: 'meat',
+      inStock: true,
+      isOrganic: true,
+    },
+    {
+      id: '7',
+      name: 'Fresh Fish',
+      price: 280.99,
+      rating: 4.7,
+      reviews: 35,
+      image: fishImage,
+      category: 'meat',
       inStock: true,
       isOrganic: true,
     },

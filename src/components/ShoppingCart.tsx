@@ -33,7 +33,7 @@ const ShoppingCart = ({
   onRemoveItem,
 }: ShoppingCartProps) => {
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const shipping = subtotal > 105 ? 0 : 15;
+  const shipping = subtotal > 1000 ? 0 : 150;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
 
@@ -125,10 +125,10 @@ const ShoppingCart = ({
                             </div>
                             <div className="text-right">
                               <div className="font-semibold text-primary">
-                                ${(item.price * item.quantity).toFixed(2)}
+                                ₹{(item.price * item.quantity).toFixed(2)}
                               </div>
                               <div className="text-sm text-muted-foreground">
-                                ${item.price.toFixed(2)} each
+                                ₹{item.price.toFixed(2)} each
                               </div>
                             </div>
                           </div>
@@ -144,12 +144,12 @@ const ShoppingCart = ({
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>₹{subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span>Shipping</span>
                     <span className={shipping === 0 ? "text-success" : ""}>
-                      {shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`}
+                      {shipping === 0 ? "FREE" : `₹${shipping.toFixed(2)}`}
                     </span>
                   </div>
                   {shipping === 0 && (
@@ -159,12 +159,12 @@ const ShoppingCart = ({
                   )}
                   <div className="flex justify-between text-sm">
                     <span>Tax</span>
-                    <span>${tax.toFixed(2)}</span>
+                    <span>₹{tax.toFixed(2)}</span>
                   </div>
                   <Separator />
                   <div className="flex justify-between font-semibold text-lg">
                     <span>Total</span>
-                    <span className="text-primary">${total.toFixed(2)}</span>
+                    <span className="text-primary">₹{total.toFixed(2)}</span>
                   </div>
                 </div>
 

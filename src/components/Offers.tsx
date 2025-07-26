@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import vegetablePackageImage from '@/assets/product-vegetable-package.jpg';
-import beefImage from '@/assets/offer-beef.jpg';
+import chickenImage from '@/assets/offer-chicken.jpg';
 
 const Offers = () => {
   const offers = [
@@ -15,10 +15,10 @@ const Offers = () => {
     },
     {
       id: 2,
-      image: beefImage,
+      image: chickenImage,
       discount: 'Up To 25% Off',
-      title: 'Healthy & fresh beef.',
-      description: 'Premium quality organic beef',
+      title: 'Healthy & fresh Chicken, Mutton, or Fish.',
+      description: 'Premium quality organic meat and fish',
     },
   ];
 

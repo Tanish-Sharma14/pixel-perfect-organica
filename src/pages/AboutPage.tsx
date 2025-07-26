@@ -1,6 +1,13 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Leaf, Users, Award, Heart } from 'lucide-react';
+import tanishImage from '@/assets/team-tanish.jpg';
+import kartikImage from '@/assets/team-kartik.jpg';
+import himanshuImage from '@/assets/team-himanshu.jpg';
+import arunImage from '@/assets/team-arun.jpg';
+import vigneshwarImage from '@/assets/team-vigneshwar.jpg';
+import organicFarmingImage from '@/assets/indian-organic-farmer.jpg';
+import freshProduceImage from '@/assets/fresh-indian-produce.jpg';
 
 const AboutPage = () => {
   return (
@@ -49,7 +56,7 @@ const AboutPage = () => {
               </div>
               <div className="relative">
                 <img 
-                  src="/api/placeholder/600/400" 
+                  src={organicFarmingImage} 
                   alt="Organic farming in India" 
                   className="rounded-lg shadow-green w-full"
                 />
@@ -118,7 +125,7 @@ const AboutPage = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="relative">
                 <img 
-                  src="/api/placeholder/600/400" 
+                  src={freshProduceImage} 
                   alt="Fresh vegetables and fruits" 
                   className="rounded-lg shadow-green w-full"
                 />
@@ -168,44 +175,50 @@ const AboutPage = () => {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               <div className="text-center">
                 <img 
-                  src="/api/placeholder/200/200" 
-                  alt="Founder" 
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                  src={tanishImage} 
+                  alt="Team Member" 
+                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
                 />
-                <h3 className="text-xl font-semibold mb-1">Rahul Sharma</h3>
-                <p className="text-primary mb-2">Founder & CEO</p>
-                <p className="text-muted-foreground text-sm">
-                  15+ years in sustainable agriculture and supply chain management
-                </p>
+                <h3 className="text-lg font-semibold mb-1">Tanish Sharma</h3>
               </div>
               
               <div className="text-center">
                 <img 
-                  src="/api/placeholder/200/200" 
-                  alt="Operations Head" 
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                  src={kartikImage} 
+                  alt="Team Member" 
+                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
                 />
-                <h3 className="text-xl font-semibold mb-1">Priya Patel</h3>
-                <p className="text-primary mb-2">Head of Operations</p>
-                <p className="text-muted-foreground text-sm">
-                  Expert in logistics and quality assurance with 10+ years experience
-                </p>
+                <h3 className="text-lg font-semibold mb-1">Kartik Sharma</h3>
               </div>
               
               <div className="text-center">
                 <img 
-                  src="/api/placeholder/200/200" 
-                  alt="Farmer Relations" 
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                  src={himanshuImage} 
+                  alt="Team Member" 
+                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
                 />
-                <h3 className="text-xl font-semibold mb-1">Arjun Kumar</h3>
-                <p className="text-primary mb-2">Farmer Relations Manager</p>
-                <p className="text-muted-foreground text-sm">
-                  Building bridges between farmers and consumers for over 8 years
-                </p>
+                <h3 className="text-lg font-semibold mb-1">Himanshu Sharma</h3>
+              </div>
+
+              <div className="text-center">
+                <img 
+                  src={arunImage} 
+                  alt="Team Member" 
+                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
+                />
+                <h3 className="text-lg font-semibold mb-1">Arun Kumar</h3>
+              </div>
+
+              <div className="text-center">
+                <img 
+                  src={vigneshwarImage} 
+                  alt="Team Member" 
+                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
+                />
+                <h3 className="text-lg font-semibold mb-1">Vigneshwar Shivpuri</h3>
               </div>
             </div>
           </div>
